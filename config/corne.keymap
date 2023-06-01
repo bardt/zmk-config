@@ -64,7 +64,7 @@
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 //                   |     |     | SPC |   | ENT |     |     |
                         bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &trans      &trans  &trans  
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &kp UP      &trans      &trans  &trans  
     &trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC    &kp LEFT    &kp DOWN    &kp RIGHT   &trans  &trans  
     &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &trans      &trans  &trans  
                             &trans  &trans  &trans  &trans      &trans      &trans                     
