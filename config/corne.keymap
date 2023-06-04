@@ -22,7 +22,7 @@
             tri_layer {
                 if-layers = <LOWER RAISE>;
                 then-layer = <ADJUST>;
-            }
+            };
         };
 
         behaviors {
