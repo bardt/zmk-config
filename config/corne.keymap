@@ -47,6 +47,19 @@
             };
         };
 
+        macros {
+                umlaut: umlaut {
+                        label = "ZM_umlaut";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_press &kp LALT>
+                                , <&macro_tap &kp U>
+                                , <&macro_release &kp LALT>
+                                ;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -57,7 +70,7 @@
 // | CAPS|  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   | NAV | LWR | SPC |   | ENT | RSE | NAV |
                         bindings = <
-   &kp ESC      &kp Q           &kp W       &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y       &kp SEMI        &none
+   &kp ESC      &kp Q           &kp W       &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y       &kp SEMI        &umlaut
    &kp TAB      &hm LSHIFT A    &hm LCTRL R &hm LALT S  &hm LGUI T  &kp G       &kp M   &hm RGUI N  &hm RALT E  &hm RCTRL I &hm RSHIFT O    &kp SQT
    &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH        &trans
                                             &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NAV
