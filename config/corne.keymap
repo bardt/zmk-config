@@ -72,7 +72,7 @@
                         bindings = <
    &kp ESC      &kp Q           &kp W       &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y       &kp SEMI        &umlaut
    &kp TAB      &hm LSHIFT A    &hm LCTRL R &hm LALT S  &hm LGUI T  &kp G       &kp M   &hm RGUI N  &hm RALT E  &hm RCTRL I &hm RSHIFT O    &kp SQT
-   &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH        &trans
+   &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH        &caps_word
                                             &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NAV
                         >;
                 };
