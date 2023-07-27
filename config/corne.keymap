@@ -100,7 +100,7 @@
                         bindings = <
     &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &none
     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &none   &kp RGUI    &kp RALT    &kp RCTRL   &kp RSHIFT  &none
-    &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &none   &none       &none       &none       &none       &none
+    &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &none   &none       &trans      &trans      &trans      &none
                             &trans  &trans  &trans      &trans  &trans      &trans
                         >;
                 };
@@ -108,8 +108,8 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
-// |      |     |  <  |  >  |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// |      |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// |      |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// |      |     |  <  |  >  |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
     &trans  &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
@@ -121,13 +121,13 @@
 
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |   |     |     |  UP |     |     |     |
-// |     |     |     |     |     |     |   | BKSP| LEFT| DOWN|RIGHT|     |     |
+// |     |     |     |     |     |     |   |     |     |  UP |     |PG_UP|     |
+// |     |     |     |     |     |     |   | BKSP| LEFT| DOWN|RIGHT|PG_DN|     |
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 //                   |     |     | SPC |   | ENT |     |     |
                         bindings = <
-    &none   &none       &none       &none       &none       &none   &none       &none       &kp UP      &none       &none   &none
-    &none   &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none   &bspc_del   &kp LEFT    &kp DOWN    &kp RIGHT   &none   &none
+    &none   &none       &none       &none       &none       &none   &none       &none       &kp UP      &none       &PG_UP  &none
+    &none   &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none   &bspc_del   &kp LEFT    &kp DOWN    &kp RIGHT   &PG_DN  &none
     &none   &none       &none       &none       &none       &none   &none       &none       &none       &none       &none   &none
                                     &trans      &trans      &trans  &trans      &trans      &trans
                         >;
