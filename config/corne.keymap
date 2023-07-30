@@ -58,7 +58,33 @@
                                 , <&macro_release &kp LALT>
                                 ;
                 };
+
+                alt_left: alt_left {
+                        label = "ZM_alt_left";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_press &kp LALT>
+                                , <&macro_tap &kp LEFT>
+                                , <&macro_release &kp LALT>
+                                ;
+                };
+
+
+                alt_right: alt_right {
+                        label = "ZM_alt_right";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_press &kp LALT>
+                                , <&macro_tap &kp RIGHT>
+                                , <&macro_release &kp LALT>
+                                ;
+                };
         };
+
+        
+        
 
         keymap {
                 compatible = "zmk,keymap";
@@ -126,7 +152,7 @@
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 //                   |     |     | SPC |   | ENT |     |     |
                         bindings = <
-    &none   &none       &none       &none       &none       &none   &none       &none       &kp UP      &none       &kp PG_UP   &none
+    &none   &none       &none       &none       &none       &none   &none       &alt_left   &kp UP      &alt_right  &kp PG_UP   &none
     &none   &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none   &bspc_del   &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN   &none
     &none   &none       &none       &none       &none       &none   &none       &none       &none       &none       &none       &none
                                     &trans      &trans      &trans  &trans      &trans      &trans
