@@ -36,6 +36,16 @@
                 bindings = <&kp>, <&kp>;
             };
 
+            bhm: balanced_homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;    // <---[[moderate duration]]
+                quick-tap-ms = <0>;
+                flavor = "balanced";
+                bindings = <&kp>, <&kp>;
+            };
+
             bspc_del: backspace_delete {
                 compatible = "zmk,behavior-mod-morph";
                 label = "BACKSPACE_DELETE";
@@ -95,10 +105,10 @@
 // | CAPS|  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |     |
 //                   | NAV | LWR | SPC |   | ENT | RSE | NAV |
                         bindings = <
-   &kp ESC      &kp Q           &kp W       &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y       &kp SEMI        &umlaut
-   &kp TAB      &hm LSHIFT A    &hm LCTRL R &hm LALT S  &hm LGUI T  &kp G       &kp M   &hm RGUI N  &hm RALT E  &hm RCTRL I &hm RSHIFT O    &kp SQT
-   &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH        &caps_word
-                                            &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NAV
+   &kp ESC      &kp Q           &kp W           &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y           &kp SEMI        &umlaut
+   &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm RALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
+   &kp CAPSLOCK &kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
+                                                &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NAV
                         >;
                 };
 
