@@ -28,7 +28,6 @@
         behaviors {
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
-                label = "HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <0>;
@@ -38,7 +37,6 @@
 
             bhm: balanced_homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
-                label = "HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;    // <---[[moderate duration]]
                 quick-tap-ms = <0>;
@@ -48,7 +46,6 @@
 
             bspc_del: backspace_delete {
                 compatible = "zmk,behavior-mod-morph";
-                label = "BACKSPACE_DELETE";
                 #binding-cells = <0>;
                 bindings = <&kp BACKSPACE>, <&kp DELETE>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -58,7 +55,6 @@
 
         macros {
                 umlaut: umlaut {
-                        label = "ZM_umlaut";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -69,7 +65,6 @@
                 };
 
                 alt_left: alt_left {
-                        label = "ZM_alt_left";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -81,7 +76,6 @@
 
 
                 alt_right: alt_right {
-                        label = "ZM_alt_right";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -92,8 +86,8 @@
                 };
         };
 
-        
-        
+
+
 
         keymap {
                 compatible = "zmk,keymap";
@@ -147,10 +141,10 @@
 // |     |     |  <  |  >  |     |     |   |  _  |  +  |  {  |  }  |  \  |  ~   |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-    &kb QMARK &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
-    &none     &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL   &kp LBKT        &kp RBKT    &kp BSLH    &kp GRAVE
-    &none     &none       &kp LT      &kp GT      &none       &none       &kp UNDER   &kp PLUS    &kp LBRC        &kp RBRC    &kp PIPE    &kp TILDE
-                                      &trans      &trans      &trans      &trans      &trans      &trans
+    &kp QMARK   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
+    &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL   &kp LBKT        &kp RBKT    &kp PIPE    &kp GRAVE
+    &none       &none       &kp LT      &kp GT      &none       &none       &kp UNDER   &kp PLUS    &kp LBRC        &kp RBRC    &kp BSLH    &kp TILDE
+                                        &trans      &trans      &trans      &trans      &trans      &trans
                         >;
                 };
 
@@ -184,10 +178,10 @@
 
                 numpad_layer {
 // -----------------------------------------------------------------------------------------
-// |BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |BR UP| MUT | V DN| V UP|     |     |
-// |     |     |     |     |     |     |   |BR DN| BCK | PLAY| FWD |     |     |
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-//                   |     |     | SPC |   | ENT |     |     |
+// |    |     |     |     |     |     |   |  =  |  7  |  8  |  9  |  0  | BSPC|
+// |    |     |     |     |     |     |   |  -  |  4  |  5  |  6  |  *  |     |
+// |    |     |     |     |     |     |   |  +  |  1  |  2  |  3  |  /  |     |
+//                  |     |     | SPC |   | ENT |     |     |
                         bindings = <
     &none           &none           &none           &none           &none           &none           &kp KP_EQUAL    &kp KP_N7      &kp KP_N8          &kp KP_N9          &kp KP_N0         &kp BSPC
     &none           &none           &none           &none           &none           &none           &kp KP_MINUS    &kp KP_N4      &kp KP_N5          &kp KP_N6          &kp KP_MULTIPLY   &none
