@@ -116,7 +116,7 @@
    &kp ESC      &kp Q           &kp W       &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I       &kp O       &kp P           &none
    &kp TAB      &hm LSHIFT A    &hm LCTRL S &hm LALT D  &hm LGUI F  &kp G       &kp H   &hm RGUI J  &hm RALT K  &hm RCTRL L &hm RSHIFT SEMI &kp SQT
    &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp V       &kp B       &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH        &trans
-                                            &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NUMPAD
+                                            &mo RAISE   &mo LOWER   &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
                 };
 
@@ -150,13 +150,13 @@
 
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |   |     |     |  UP |     |PG_UP|     |
-// |     |     |     |     |     |     |   | BKSP| LEFT| DOWN|RIGHT|PG_DN|     |
+// |     |     |     |     |     |     |   |     |     |PG_DN|PG_UP|     |     |
+// |     |     |     |     |     |     |   | BKSP| LEFT| DOWN|  UP |RIGHT|     |
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 //                   |     |     | SPC |   | ENT |     |     |
                         bindings = <
-    &none   &none       &none       &none       &none       &none   &none       &alt_left   &kp UP      &alt_right  &kp PG_UP   &none
-    &none   &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none   &bspc_del   &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN   &none
+    &none   &none       &none       &none       &none       &none   &none       &none       &kp PG_DN   &kp PG_UP   &none       &none
+    &none   &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none   &bspc_del   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
     &none   &none       &none       &none       &none       &none   &none       &none       &none       &none       &none       &none
                                     &trans      &trans      &trans  &trans      &trans      &trans
                         >;
