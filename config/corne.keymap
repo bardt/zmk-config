@@ -102,7 +102,7 @@
    &kp ESC      &kp Q           &kp W           &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y           &kp SEMI        &umlaut
    &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm RALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
    &kp CAPSLOCK &kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
-                                                &mo NAV     &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &mo NUMPAD
+                                                &mo RAISE   &mo LOWER   &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
                 };
 
