@@ -10,8 +10,8 @@
 
 #define DEFAULT 0
 #define QWERTY  1
-#define LOWER   2
-#define RAISE   3
+#define NUMBERS 2
+#define SYMBOLS 3
 #define NAV     4
 #define ADJUST  5
 #define NUMPAD  6
@@ -20,7 +20,7 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <LOWER RAISE>;
+                if-layers = <RAISE NAV>;
                 then-layer = <ADJUST>;
             };
         };
@@ -102,7 +102,7 @@
    &kp ESC      &kp Q           &kp W           &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y           &kp SEMI        &umlaut
    &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm RALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
    &kp CAPSLOCK &kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
-                                                &mo RAISE   &mo LOWER   &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
+                                                &mo NUMBERS &mo SYMBOLS &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
                 };
 
@@ -120,7 +120,7 @@
                         >;
                 };
 
-                lower_layer {
+                numbers_layer {
 // -----------------------------------------------------------------------------------------
 // |  0  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
 // | F1  | F2  | F3  | F4  | F5  | F6  |   |     |     |     |     |     |     |
@@ -134,7 +134,7 @@
                         >;
                 };
 
-                raise_layer {
+                symbols_layer {
 // -----------------------------------------------------------------------------------------
 // |  ?  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
 // |     |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
