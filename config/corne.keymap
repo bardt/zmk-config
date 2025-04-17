@@ -116,7 +116,7 @@
    &kp ESC      &kp Q           &kp W       &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I       &kp O       &kp P           &none
    &kp TAB      &hm LSHIFT A    &hm LCTRL S &hm LALT D  &hm LGUI F  &kp G       &kp H   &hm RGUI J  &hm RALT K  &hm RCTRL L &hm RSHIFT SEMI &kp SQT
    &kp CAPSLOCK &kp Z           &kp X       &kp C       &kp V       &kp B       &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH        &trans
-                                            &mo RAISE   &mo LOWER   &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
+                                            &mo NUMBERS &mo SYMBOLS &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
                 };
 
