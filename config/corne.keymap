@@ -121,15 +121,15 @@
 
                 symbols_layer {
 // -----------------------------------------------------------------------------------------
-// |  ?  |  !  |  @  |  #  |  %  |  ^  |   |  $  |  &  |  *  |  (  |  )  |      |
+// |  ?  |  !  |  @  |  :  |  %  |  ^  |   |  $  |  &  |  (  |  )  |     |
 // |     |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
-// |     |     |  <  |  >  |     |     |   |  _  |  +  |  {  |  }  |  \  |  ~   |
+// |     |     |  <  |  >  |     |     |   |  #  |  *  |  {  |  }  |  \  |  ~   |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-    &kp QMARK   &kp EXCL    &kp AT      &kp HASH    &kp PRCNT   &kp CARET   &kp DLLR    &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
-    &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL   &kp LBKT        &kp RBKT    &kp PIPE    &kp GRAVE
-    &none       &none       &kp LT      &kp GT      &none       &none       &kp UNDER   &kp PLUS    &kp LBRC        &kp RBRC    &kp BSLH    &kp TILDE
-                                        &trans      &trans      &trans      &trans      &trans      &trans
+    &kp QMARK   &kp EXCL    &kp AT      &kp COLON   &kp PRCNT   &kp CARET   &kp DLLR    &kp AMPS         &kp LPAR    &kp RPAR    &trans      &trans
+    &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL        &kp LBKT    &kp RBKT    &kp PIPE    &kp GRAVE
+    &none       &none       &kp LT      &kp GT      &none       &none       &kp HASH    &kp KP_MULTIPLY  &kp LBRC    &kp RBRC    &kp BSLH    &kp TILDE
+                                        &trans      &trans      &trans      &trans      &trans           &trans
                         >;
                 };
 
