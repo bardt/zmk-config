@@ -121,12 +121,12 @@
 
                 symbols_layer {
 // -----------------------------------------------------------------------------------------
-// |  ?  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
+// |  ?  |  !  |  @  |  #  |  %  |  ^  |   |  $  |  &  |  *  |  (  |  )  |      |
 // |     |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
 // |     |     |  <  |  >  |     |     |   |  _  |  +  |  {  |  }  |  \  |  ~   |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-    &kp QMARK   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
+    &kp QMARK   &kp EXCL    &kp AT      &kp HASH    &kp PRCNT   &kp CARET   &kp DLLR    &kp AMPS    &kp KP_MULTIPLY &kp LPAR    &kp RPAR    &trans
     &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL   &kp LBKT        &kp RBKT    &kp PIPE    &kp GRAVE
     &none       &none       &kp LT      &kp GT      &none       &none       &kp UNDER   &kp PLUS    &kp LBRC        &kp RBRC    &kp BSLH    &kp TILDE
                                         &trans      &trans      &trans      &trans      &trans      &trans
