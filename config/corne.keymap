@@ -57,9 +57,9 @@
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_press &kp LALT>
+                                = <&macro_press &kp RALT>
                                 , <&macro_tap &kp U>
-                                , <&macro_release &kp LALT>
+                                , <&macro_release &kp RALT>
                                 ;
                 };
 
@@ -99,7 +99,7 @@
 //                   | NAV | LWR | SPC |   | ENT | RSE | NAV |
                         bindings = <
    &kp ESC      &kp Q           &kp W           &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y           &kp SEMI        &umlaut
-   &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm RALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
+   &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm LALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
    &kp CAPSLOCK &kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
                                                 &mo NUMBERS &mo SYMBOLS &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
@@ -113,7 +113,7 @@
 //                   |     |     |     |   |     |     |     |
                         bindings = <
     &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &none
-    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &bspc_del   &kp RGUI    &kp RALT    &kp RCTRL   &kp RSHIFT  &none
+    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &bspc_del   &kp RGUI    &kp LALT    &kp RCTRL   &kp RSHIFT  &none
     &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &none       &none       &trans      &trans      &trans      &none
                             &trans  &trans  &trans      &trans      &trans      &trans
                         >;
