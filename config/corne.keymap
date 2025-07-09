@@ -99,13 +99,13 @@
 
 	combos {
 		compatible = "zmk,combos";
-		combo_pipe_left: {
+		combo_pipe_left {
 		    timeout-ms = <50>;
 		    key-positions = <25 26>;
 		    bindings = <&macro_pipe_left>;
 		};
 		
-		combo_pipe_right: {
+		combo_pipe_right {
 		    timeout-ms = <50>;
 		    key-positions = <27 28>;
 		    bindings = <&macro_pipe_right>;
