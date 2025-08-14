@@ -124,12 +124,12 @@
 // -----------------------------------------------------------------------------------------
 // | ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  ¨  |
 // | TAB |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |  '  |
-// |     |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  | CAPS|
+// |  `  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  | CAPS|
 //                   | NAV | LWR | SPC |   | ENT | RSE | NAV |
                         bindings = <
    &kp ESC      &kp Q           &kp W           &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y           &kp SEMI        &umlaut
    &kp TAB      &bhm LSHIFT A   &bhm LCTRL R    &bhm LALT S &bhm LGUI T &kp G       &kp M   &bhm RGUI N &bhm LALT E &bhm RCTRL I    &bhm RSHIFT O   &kp SQT
-   &none 	&kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
+   &kp GRAVE    &kp Z           &kp X           &kp C       &kp D       &kp V       &kp K   &kp H       &kp COMMA   &kp DOT         &kp FSLH        &caps_word
                                                 &mo NUMBERS &mo SYMBOLS &kp SPACE   &kp RET &mo NAV     &mo NUMPAD
                         >;
                 };
@@ -150,14 +150,14 @@
 
                 symbols_layer {
 // -----------------------------------------------------------------------------------------
-// |  ?  |  !  |  @  |  :  |  %  |  ^  |   |  $  |  &  |  (  |  )  |     |
-// |     |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
-// |     |     |  <  |  >  |     |     |   |  #  |  *  |  {  |  }  |  \  |  ~   |
+// |  ?  |  !  |  @  |  :  |  %  |  ^  |   |  $  |  &  |  (  |  )  |     |     |
+// |     |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |     |
+// |     |     |  <  |  >  |     |     |   |  #  |  *  |  {  |  }  |  \  |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
     &kp QMARK   &kp EXCL    &kp AT      &kp COLON   &kp PRCNT   &kp CARET   &kp DLLR    &kp AMPS         &kp LPAR    &kp RPAR    &none       &none
-    &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL        &kp LBKT    &kp RBKT    &kp PIPE    &kp GRAVE
-    &none       &none       &kp LT      &kp GT      &none       &none       &kp HASH    &kp KP_MULTIPLY  &kp LBRC    &kp RBRC    &kp BSLH    &kp TILDE
+    &none       &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none       &kp MINUS   &kp EQUAL        &kp LBKT    &kp RBKT    &kp PIPE    &none
+    &none       &none       &kp LT      &kp GT      &none       &none       &kp HASH    &kp KP_MULTIPLY  &kp LBRC    &kp RBRC    &kp BSLH    &none
                                         &trans      &trans      &trans      &trans      &trans           &trans
                         >;
                 };
