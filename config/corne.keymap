@@ -29,13 +29,18 @@
         // Positional home row mods: a hold only triggers when the next key is
         // on the opposite hand (or a thumb). Same-hand rolls like "at" always
         // resolve as taps, so they can't come out as Shift+T.
+        //
+        // Deliberately NOT set: require-prior-idle-ms (forces a tap after any
+        // recent keypress, so fast space->A->I yields "ai" not "I") and
+        // hold-trigger-on-release (defers the tap to key release, which makes
+        // every same-hand roll feel laggy). Cost: two mods on the SAME hand
+        // can't chord -- take one mod per hand, e.g. A-shift + N-gui + Z.
         hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <
                  6  7  8  9 10 11
@@ -43,16 +48,14 @@
                 30 31 32 33 34 35
                 36 37 38 39 40 41
             >;
-            hold-trigger-on-release;
         };
 
         hmr: homerow_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <
                  0  1  2  3  4  5
@@ -60,7 +63,6 @@
                 24 25 26 27 28 29
                 36 37 38 39 40 41
             >;
-            hold-trigger-on-release;
         };
 
         bspc_del: backspace_delete {
