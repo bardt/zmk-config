@@ -26,43 +26,28 @@
     };
 
     behaviors {
-        // Positional home row mods: a hold only triggers when the next key is
-        // on the opposite hand (or a thumb). Same-hand rolls like "at" always
-        // resolve as taps, so they can't come out as Shift+T.
+        // Balanced home row mods. Multi-modifier hotkeys (two mods on the
+        // same hand) require that no positional guard is in play, so there
+        // isn't one -- which means a same-hand roll like "at" can still come
+        // out as Shift+T. With flavor "balanced" that is structural, not a
+        // tuning problem: any overlap where A is still held when T is pressed
+        // resolves to a hold regardless of tapping-term-ms.
         //
-        // Deliberately NOT set: require-prior-idle-ms (forces a tap after any
-        // recent keypress, so fast space->A->I yields "ai" not "I") and
-        // hold-trigger-on-release (defers the tap to key release, which makes
-        // every same-hand roll feel laggy). Cost: two mods on the SAME hand
-        // can't chord -- take one mod per hand, e.g. A-shift + N-gui + Z.
-        hml: homerow_mod_left {
+        // Tried and removed, each for a reason:
+        //   hold-trigger-key-positions  -> killed same-hand mod chords
+        //   hold-trigger-on-release     -> same-hand rolls only emit on release
+        //   require-prior-idle-ms       -> fast space,A,I gave "ai" not "I"
+        //
+        // The only lever left that fixes "at" while keeping mod chords is
+        // flavor = "tap-preferred", which costs a full tapping-term hold
+        // before the modifier engages.
+        bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                 6  7  8  9 10 11
-                18 19 20 21 22 23
-                30 31 32 33 34 35
-                36 37 38 39 40 41
-            >;
-        };
-
-        hmr: homerow_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                 0  1  2  3  4  5
-                12 13 14 15 16 17
-                24 25 26 27 28 29
-                36 37 38 39 40 41
-            >;
         };
 
         bspc_del: backspace_delete {
@@ -104,7 +89,7 @@
 
             bindings = <
 &kp ESC    &kp Q          &kp W         &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y         &kp SEMI       &umlaut
-&kp TAB    &hml LSHIFT A  &hml LCTRL R  &hml LALT S  &hml LGUI T  &kp G        &kp M    &hmr RGUI N  &hmr LALT E  &hmr RCTRL I  &hmr RSHIFT O  &kp SQT
+&kp TAB    &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G        &kp M    &bhm RGUI N  &bhm LALT E  &bhm RCTRL I  &bhm RSHIFT O  &kp SQT
 &kp GRAVE  &kp Z          &kp X         &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp DOT       &kp FSLH       &caps_word
                                         &mo 1        &mo 3        &kp SPACE    &kp RET  &mo 4        &tog 2
             >;
