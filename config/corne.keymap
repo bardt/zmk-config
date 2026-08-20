@@ -26,28 +26,32 @@
     };
 
     behaviors {
-        // Balanced home row mods. Multi-modifier hotkeys (two mods on the
-        // same hand) require that no positional guard is in play, so there
-        // isn't one -- which means a same-hand roll like "at" can still come
-        // out as Shift+T. With flavor "balanced" that is structural, not a
-        // tuning problem: any overlap where A is still held when T is pressed
-        // resolves to a hold regardless of tapping-term-ms.
+        // Home row mods, tap-preferred: only the tapping term can produce a
+        // hold, so a rolled key never does and "at" stays "at". The cost is
+        // waiting out the full term before any modifier engages.
         //
-        // Tried and removed, each for a reason:
+        // Under tap-preferred the term is the SAFETY MARGIN for rolls -- the
+        // opposite of balanced. Raise it for fewer misfires, lower it for
+        // snappier mods. The tap-preferred/150 used before cbe27fd had very
+        // little margin, which is likely why it felt unreliable back then.
+        //
+        // hold-while-undecided asserts the modifier on press, so Cmd-click and
+        // Shift-click land without waiting out the term. It does NOT speed up
+        // keyboard combos; those are still captured and ruled by the flavor.
+        //
+        // Tried and rejected, each for a reason:
+        //   flavor "balanced"           -> any overlap misfires: "at" -> "T"
         //   hold-trigger-key-positions  -> killed same-hand mod chords
         //   hold-trigger-on-release     -> same-hand rolls only emit on release
         //   require-prior-idle-ms       -> fast space,A,I gave "ai" not "I"
-        //
-        // The only lever left that fixes "at" while keeping mod chords is
-        // flavor = "tap-preferred", which costs a full tapping-term hold
-        // before the modifier engages.
-        bhm: balanced_homerow_mods {
+        hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
+            hold-while-undecided;
         };
 
         bspc_del: backspace_delete {
@@ -89,7 +93,7 @@
 
             bindings = <
 &kp ESC    &kp Q          &kp W         &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y         &kp SEMI       &umlaut
-&kp TAB    &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G        &kp M    &bhm RGUI N  &bhm LALT E  &bhm RCTRL I  &bhm RSHIFT O  &kp SQT
+&kp TAB    &hrm LSHIFT A  &hrm LCTRL R  &hrm LALT S  &hrm LGUI T  &kp G        &kp M    &hrm RGUI N  &hrm LALT E  &hrm RCTRL I  &hrm RSHIFT O  &kp SQT
 &kp GRAVE  &kp Z          &kp X         &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp DOT       &kp FSLH       &caps_word
                                         &mo 1        &mo 3        &kp SPACE    &kp RET  &mo 4        &tog 2
             >;
